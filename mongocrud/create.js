@@ -1,13 +1,12 @@
 function insertData() {
     console.log("About to call AJAX to get Employee Data");
     var employee = {
-        'empName':$('#empName').val(),
+        'empName': $('#empName').val(),
         'empAge': $('#empAge').val(),
         'empLocation': $('#empLocation').val(),
         'gender': $("input[name='gender']:checked").val()
-        
-    };
 
+    };
     $.ajax(
         {
 
@@ -19,7 +18,7 @@ function insertData() {
             success: (posRes) => {
                 console.log("AJAX CALL IS SUCESS");
                 console.log(posRes);
-               
+
             },
             error: (errRes) => {
                 console.log("Error in Middle ware Call");
