@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> First AJAX Programme </title>
+    </head>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+     <script src="ajax.js">
+     </script>
+
+    <style>
+
+        ul{
+            width: 600px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        li{
+            list-style: none;
+            border: 2px solid;
+            margin: 5px;
+            padding: 5px;
+        }
+
+    </style>
+    
+
+    <body>
+
+
+        <div>
+          
+            <ul >
+
+                <li>
+                    Employee Name is : <span id="empname"></span>
+                </li>
+
+                <li>
+                    Employee Age is : <span id="empage"></span>
+                </li>
+
+                <li>
+                    Employee Location is : <span id="empLocation"></span>
+                </li>
+            </ul>
+        </div>
+
+
+        <input type="button" value="Load Employee Data" onclick="makeajax()">
+
+       <!--  <script>
+
+            var empData=[];
+
+            
+
+            function showData(){
+                console.log('showData'+ empData);
+                empData.forEach(function (arrayItem) {
+    
+                $("#empname").append(empData.empName);
+                $("#empage").text(empData.empAge);
+                $("#empLocation").text(empData.empLocation)
+                });
+              
+            }
+
+
+
+            function makeajax(){
+
+                console.log("About to call AJAX to get Employee Data");
+
+                $.ajax( 
+                    {
+
+                        url:"http://localhost:8085/employee/fetch",
+                        method:"GET",
+                        dataType:'JSON',
+                        async:false,
+                        success:(posRes)=>{
+                                console.log("AJAX CALL IS SUCESS");
+                                console.log(posRes);
+                                empData=posRes;
+                                showData();
+                        },
+                        error:(errRes)=>{
+                            console.log("Error in Middle ware Call");
+                            console.log(errRes);
+                        }
+                    }
+
+                )
+
+            }
+        </script>
+         -->
+        </body>
+</html>
